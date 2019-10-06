@@ -1,0 +1,44 @@
+{
+  "name": "celebapi-express",
+  "version": "1.0.0",
+  "description": "Celebapi with Express.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node src/index.js",
+    "prod": "NODE_ENV=production nodemon --exec babel-node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/m4v1/celebapi-express.git"
+  },
+  "author": "m4v1",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/m4v1/celebapi-express/issues"
+  },
+  "homepage": "https://gitlab.com/m4v1/celebapi-express#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "helmet": "^3.21.1",
+    "knex": "^0.19.4",
+    "moment": "^2.24.0",
+    "mysql2": "^1.7.0",
+    "node-fetch": "^2.6.0",
+    "objection": "^1.6.11",
+    "pino": "^5.13.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/node": "^7.6.2",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.6.2",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "nodemon": "^1.19.2"
+  }
+}
