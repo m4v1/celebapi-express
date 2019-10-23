@@ -1,22 +1,26 @@
 import pino from 'pino';
+import SentryLogger from './sentry';
 
 class Logger {
   constructor() {
-    // set default logger
+    // set default logger for dev
     this.logger = pino();
+    if (process.env.NODE_ENV === 'production') {
+      this.logger = SentryLogger;
+    }
   }
 
-  info = (msg) => {
-    this.logger.info(msg);
-  }
+  info = error => {
+    this.logger.info(error);
+  };
 
-  warning = (msg) => {
-    this.logger.info(msg);
-  }
+  warning = error => {
+    this.logger.warn(error);
+  };
 
-  error = (msg) => {
-    this.logger.info(msg);
-  }
+  error = error => {
+    this.logger.error(error);
+  };
 }
 
 export default new Logger();
