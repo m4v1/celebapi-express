@@ -12,4 +12,4 @@ app.get('/', (req, res) => res.send('Nothing to see here'));
 app.get('/videos/:name', getVideos);
 app.get('/info/:name', getInfo);
 
-app.listen(process.env.SERVER_PORT);
+app.listen(process.env.SERVER_PORT, '127.0.0.1');
