@@ -1,8 +1,15 @@
 import express from 'express';
 import helmet from 'helmet';
 import {} from 'dotenv/config';
+import tracer from 'dd-trace';
 import getInfo from './routes/info';
 import getVideos from './routes/videos';
+
+if (process.env.NODE_ENV === 'production') {
+  tracer.init({
+    analytics: true
+  });
+}
 
 const app = express();
 
