@@ -3,8 +3,10 @@ import ErrorResponse from '../apiError';
 
 const generateDTO = (data, status) => {
   switch (status) {
-    case 'ok':
-      return SuccessResponse.format(data, 'ok', 200);
+    case 'remote':
+      return SuccessResponse.format(data, 'remote', 200);
+    case 'cache':
+      return SuccessResponse.format(data, 'cache', 200);
     case 'error':
       return ErrorResponse.format({}, 'Videos not found', 404);
     default:
