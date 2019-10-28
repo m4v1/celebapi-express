@@ -13,7 +13,6 @@ const getInfo = async (req, res) => {
 
   let profile = await cache.get(req.params.name);
   profile = JSON.parse(profile);
-  console.log(profile);
   status = 'cache';
 
   if (!profile) {
