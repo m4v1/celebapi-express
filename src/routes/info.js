@@ -12,6 +12,7 @@ const getInfo = async (req, res) => {
   });
 
   let profile = await cache.get(req.params.name);
+  // we need to decode the Json string from Redis
   profile = JSON.parse(profile);
   status = 'cache';
 
@@ -30,11 +31,12 @@ const getInfo = async (req, res) => {
       } else {
         // save data to db, this should be sync
         Database.insertProfile(profile);
-        cache.set(req.params.name, JSON.stringify(profile));
+        // cache data with expiration time 1h
+        cache.set(req.params.name, JSON.stringify(profile), 'EX', 3600);
       }
     } else {
-      // profile is on the database but not in cache, so we cache it
-      cache.set(req.params.name, JSON.stringify(profile));
+      // profile is on the database but not in cache, so we cache it for 1h
+      cache.set(req.params.name, JSON.stringify(profile), 'EX', 3600);
     }
   }
 
