@@ -31,7 +31,8 @@ const parseBPlace = ($) => {
 };
 
 const searchRemoteInfo = async (name) => {
-  const url = `https://www.famousbirthdays.com/people/${name.replace(' ', '-')}.html`;
+  const urlParam = encodeURIComponent(name.replace(' ', '-'));
+  const url = `https://www.famousbirthdays.com/people/${urlParam}.html`;
 
   try {
     const response = await fetch(url);
