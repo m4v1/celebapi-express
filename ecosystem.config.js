@@ -3,7 +3,7 @@ module.exports = {
     {
       name: 'celebapi-express',
       script: 'dist/index.js',
-      max_memory_restart: '200M',
+      max_memory_restart: '100M',
       exec_mode: 'cluster',
       watch: 'dist',
       env: {
