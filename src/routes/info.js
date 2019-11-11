@@ -1,15 +1,10 @@
-import Redis from 'ioredis';
 import Database from '../services/db';
 import searchRemoteInfo from '../services/searchRemoteInfo';
 import generateDTO from '../models/api/info/generateInfoDTO';
+import cache from '../services/cache';
 
 const getInfo = async (req, res) => {
   let status;
-  const cache = new Redis({
-    port: 6379, // Redis port
-    host: '127.0.0.1', // Redis host
-    db: 0
-  });
 
   let profile = await cache.get(req.params.name);
   // we need to decode the Json string from Redis
@@ -34,7 +29,7 @@ const getInfo = async (req, res) => {
          */
         cache.set(req.params.name, JSON.stringify({}), 'EX', 21600);
       } else {
-        // save data to db, this should be sync
+        // save data to db
         Database.insertProfile(profile);
         // cache data with expiration time 1h
         cache.set(req.params.name, JSON.stringify(profile), 'EX', 3600);

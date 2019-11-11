@@ -1,14 +1,8 @@
-import Redis from 'ioredis';
 import searchRemoteVideos from '../services/searchRemoteVideos';
 import generateDTO from '../models/api/videos/generateVideosDTO';
+import cache from '../services/cache';
 
 const getVideos = async (req, res) => {
-  const cache = new Redis({
-    port: 6379, // Redis port
-    host: '127.0.0.1', // Redis host
-    db: 0
-  });
-
   let videos = await cache.get(`${req.params.name}-videos`);
   videos = JSON.parse(videos);
   let status = 'cache';
