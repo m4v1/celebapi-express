@@ -10,7 +10,7 @@ Celebapi Express is a nodejs rest api to retrieve informations about celebrities
 
 You need to have Node and MySQL installed to run this app.
 
-At the moment you can only use Mysql as persistence.
+At the moment you can only use MySQL as persistence.
 
 If you want to use to cache system, you need to have Redis installed.
 
@@ -32,7 +32,7 @@ npm run build
 
 will build the code and put it into the /dist folder.
 
-You should also edit Knex configuration file [knexfile.js](https://github.com/m4v1/celebapi-express/blob/master/knexfile.js) according to your mysql config.
+You should also edit Knex configuration file [knexfile.js](https://github.com/m4v1/celebapi-express/blob/master/knexfile.js) according to your MySQL config.
 
 Use Knex command line tool to run db migrations:
 
