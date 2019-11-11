@@ -1,0 +1,27 @@
+dist: bionic
+
+services:
+  - mysql
+  - redis
+
+language: node_js
+node_js:
+  - 11
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+
+before_install:
+  - mysql -e 'CREATE DATABASE dockertest;'
+  - cp .env.orig .env
+
+install:
+  - npm i
+
+before_script:
+  - npx cross-env NODE_ENV=testing knex migrate:latest
+
+script:
+  - npm run test
