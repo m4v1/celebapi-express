@@ -1,7 +1,7 @@
 import express from 'express';
 import helmet from 'helmet';
-import {} from 'dotenv/config';
 import tracer from 'dd-trace';
+import {} from './config';
 import getInfo from './routes/info';
 import getVideos from './routes/videos';
 
@@ -19,4 +19,6 @@ app.get('/', (req, res) => res.send('Nothing to see here'));
 app.get('/videos/:name', getVideos);
 app.get('/info/:name', getInfo);
 
-app.listen(process.env.SERVER_PORT, '127.0.0.1');
+export const server = app.listen(process.env.SERVER_PORT, '127.0.0.1');
+
+export default app;

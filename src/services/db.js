@@ -4,7 +4,7 @@ import Profile from '../models/profile';
 import logger from './logger';
 
 // Initialize knex.
-const knex = Knex({
+export const knex = Knex({
   client: 'mysql2',
   connection: {
     host: process.env.DB_HOST,
