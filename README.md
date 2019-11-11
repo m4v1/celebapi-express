@@ -8,7 +8,7 @@ Celebapi Express is a nodejs rest api to retrieve informations about celebrities
 
 <img src="https://img.shields.io/badge/MySQL-5.7.0-blue" /> <img src="https://img.shields.io/badge/Node-12.0.0-blue" /> 
 
-You need to have Node and MySQL installed to run this app.
+You need to have [Node](https://nodejs.org/en/download/) and [MySQL](https://dev.mysql.com/downloads/) installed to run this app.
 
 At the moment you can only use MySQL as persistence.
 
