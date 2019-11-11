@@ -18,6 +18,7 @@ before_install:
   - sudo systemctl restart mysql
   - mysql -pdockerpass -e 'CREATE DATABASE dockertest;'
   - cp .env.orig .env
+  - sed -i 's/added_at_build_time/'"$YOUTUBE_API_KEY"'/g' .env.test
 
 install:
   - npm i
