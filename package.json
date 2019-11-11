@@ -4,11 +4,16 @@
   "description": "Celebapi with Express.js",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node src/index.js",
+    "start": "cross-env NODE_ENV=development nodemon --exec babel-node src/index.js",
     "prod": "cross-env NODE_ENV=production node dist/index.js",
     "profile": "cross-env NODE_ENV=production node --prof dist/index.js",
     "build": "cross-env NODE_ENV=production npx babel src/ --out-dir dist/",
-    "test": "jest"
+    "pretest": "cross-env NODE_ENV=testing npm run migrate-reset",
+    "test": "cross-env NODE_ENV=testing jest",
+    "migrate-up": "knex migrate:latest",
+    "migrate-down": "knex migrate:rollback --all",
+    "migrate-reset": "npm run migrate-down && npm run migrate-up && npm run seed-test",
+    "seed-test": "cross-env NODE_ENV=testing knex seed:run"
   },
   "repository": {
     "type": "git",
