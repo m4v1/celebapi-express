@@ -8,9 +8,9 @@ const generateDTO = (data, status) => {
     case 'cache':
       return SuccessResponse.format(data, 'cache', 200);
     case 'error':
-      return ErrorResponse.format({}, 'Videos not found', 404);
+      return ErrorResponse.format([], 'Videos not found', 404);
     default:
-      return ErrorResponse.format({}, 'Generic Error', 500);
+      return ErrorResponse.format([], 'Generic Error', 500);
   }
 };
 
