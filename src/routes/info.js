@@ -31,12 +31,12 @@ const getInfo = async (req, res) => {
       } else {
         // save data to db
         Database.insertProfile(profile);
-        // cache data with expiration time 1h
-        cache.set(req.params.name, JSON.stringify(profile), 'EX', 3600);
+        // cache data with expiration time 1 day
+        cache.set(req.params.name, JSON.stringify(profile), 'EX', 86400);
       }
     } else {
-      // profile is on the database but not in cache, so we cache it for 1h
-      cache.set(req.params.name, JSON.stringify(profile), 'EX', 3600);
+      // profile is on the database but not in cache, so we cache it for 1 day
+      cache.set(req.params.name, JSON.stringify(profile), 'EX', 86400);
     }
   } else if (Object.entries(profile).length === 0) {
     // profile is on the cache but it's an empty object, we return 404
