@@ -1,12 +1,12 @@
 # Celebapi Express
 
-[![dependencies Status](https://david-dm.org/m4v1/celebapi-express/status.svg)](https://david-dm.org/m4v1/celebapi-express) [![Build Status](https://travis-ci.com/m4v1/celebapi-express.svg?branch=master)](https://travis-ci.com/m4v1/celebapi-express) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d762343d85f04ba88d14fae35a1a9aa0)](https://www.codacy.com/manual/marco.vivi/celebapi-express?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=m4v1/celebapi-express&amp;utm_campaign=Badge_Grade)
+[![dependencies Status](https://david-dm.org/m4v1/celebapi-express/status.svg)](https://david-dm.org/m4v1/celebapi-express) [![Build Status](https://travis-ci.com/m4v1/celebapi-express.svg?branch=master)](https://travis-ci.com/m4v1/celebapi-express) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d762343d85f04ba88d14fae35a1a9aa0)](https://www.codacy.com/manual/marco.vivi/celebapi-express?utm_source=github.com&utm_medium=referral&utm_content=m4v1/celebapi-express&utm_campaign=Badge_Grade)
 
 Celebapi Express is a nodejs rest api to retrieve informations about celebrities and store them in a mysql database. It can use a redis chache, enabled in the .env configuration file.
 
 ### Prerequisites
 
-<img src="https://img.shields.io/badge/MySQL-5.7.0-blue" /> <img src="https://img.shields.io/badge/Node-12.0.0-blue" /> 
+<img src="https://img.shields.io/badge/MySQL-5.7.0-blue" /> <img src="https://img.shields.io/badge/Node-12.0.0-blue" />
 
 You need to have [Node](https://nodejs.org/en/download/) and [MySQL](https://dev.mysql.com/downloads/) installed to run this app.
 
@@ -21,6 +21,7 @@ Use the package manager [npm](https://www.npmjs.com/get-npm) to install Celebapi
 ```bash
 git clone https://github.com/m4v1/celebapi-express
 cd celebapi-express
+npm i
 mv .env.orig .env
 ```
 
