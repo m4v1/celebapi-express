@@ -1,6 +1,6 @@
 # Celebapi Express
 
-[![dependencies Status](https://david-dm.org/m4v1/celebapi-express/status.svg)](https://david-dm.org/m4v1/celebapi-express)[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![dependencies Status](https://david-dm.org/m4v1/celebapi-express/status.svg)](https://david-dm.org/m4v1/celebapi-express) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d762343d85f04ba88d14fae35a1a9aa0)](https://www.codacy.com/manual/marco.vivi/celebapi-express?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=m4v1/celebapi-express&amp;utm_campaign=Badge_Grade)
 
 Celebapi Express is a nodejs rest api to retrieve informations about celebrities and store them in a mysql database. It can use a redis chache, enabled in the .env configuration file.
 
