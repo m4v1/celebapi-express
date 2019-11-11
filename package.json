@@ -9,7 +9,7 @@
     "profile": "cross-env NODE_ENV=production node --prof dist/index.js",
     "build": "cross-env NODE_ENV=production npx babel src/ --out-dir dist/",
     "pretest": "cross-env NODE_ENV=testing npm run migrate-reset",
-    "test": "cross-env NODE_ENV=testing jest",
+    "test": "cross-env NODE_ENV=testing jest --forceExit",
     "migrate-up": "knex migrate:latest",
     "migrate-down": "knex migrate:rollback --all",
     "migrate-reset": "npm run migrate-down && npm run migrate-up && npm run seed-test",
