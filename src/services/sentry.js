@@ -21,4 +21,4 @@ class SentryLogger {
   };
 }
 
-export default new SentryLogger();
+export default SentryLogger;
