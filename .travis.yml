@@ -14,7 +14,9 @@ notifications:
     on_failure: change
 
 before_install:
-  - mysql -e 'CREATE DATABASE dockertest;'
+  - sudo mysql -e "use mysql; update user set authentication_string=PASSWORD('dockerpass') where User='root'; FLUSH PRIVILEGES;"
+  - sudo systemctl restart mysql
+  - mysql -e -pdockerpass 'CREATE DATABASE dockertest;'
   - cp .env.orig .env
 
 install:
