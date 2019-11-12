@@ -17,7 +17,9 @@ before_install:
   - sudo mysql -e "use mysql; update user set authentication_string=PASSWORD('dockerpass') where User='root'; FLUSH PRIVILEGES;"
   - sudo systemctl restart mysql
   - mysql -pdockerpass -e 'CREATE DATABASE dockertest;'
-  - cp .env.orig .env
+  - mv .env.orig .env
+  - mv .env.travis .env.test
+  - sed -i 's/yourdsnfromsentry.io/'"$SENTRY_DSN"'/g' .env.test
   - sed -i 's/added_at_build_time/'"$YOUTUBE_API_KEY"'/g' .env.test
 
 install:
