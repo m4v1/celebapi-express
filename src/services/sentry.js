@@ -4,7 +4,7 @@ class SentryLogger {
   constructor() {
     // set default logger for prod
     Sentry.init({
-      dsn: 'https://66f3205d81094ddf9906a24851fed641@sentry.io/1793833'
+      dsn: process.env.SENTRY_DSN
     });
   }
 

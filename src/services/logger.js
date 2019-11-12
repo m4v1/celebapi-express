@@ -5,7 +5,7 @@ class Logger {
   constructor() {
     // set default logger for dev
     this.logger = pino();
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV === 'production' && process.env.SENTRY_DSN) {
       this.logger = new SentryLogger();
     }
   }
