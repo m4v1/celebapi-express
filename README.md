@@ -4,7 +4,7 @@
 
 Celebapi Express is a nodejs rest api to retrieve informations about celebrities and store them in a mysql database. It can use a redis chache, enabled in the .env configuration file.
 
-### Prerequisites
+## Prerequisites
 
 <img src="https://img.shields.io/badge/MySQL-5.7.0-blue" /> <img src="https://img.shields.io/badge/Node-12.0.0-blue" />
 
