@@ -65,6 +65,7 @@
     "collectCoverage": true,
     "testEnvironment": "node",
     "coverageReporters": [
+      "lcov",
       "html"
     ],
     "coveragePathIgnorePatterns": [
