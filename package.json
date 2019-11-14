@@ -26,7 +26,7 @@
   },
   "homepage": "https://gitlab.com/m4v1/celebapi-express#readme",
   "dependencies": {
-    "@sentry/node": "^5.7.1",
+    "@sentry/node": "^5.9.0",
     "cheerio": "^1.0.0-rc.3",
     "dd-trace": "^0.15.5",
     "dotenv": "^8.2.0",
@@ -35,18 +35,18 @@
     "ioredis": "^4.14.1",
     "knex": "^0.19.5",
     "moment": "^2.24.0",
-    "mysql2": "^1.7.0",
+    "mysql2": "^2.0.0",
     "node-fetch": "^2.6.0",
     "objection": "^1.6.11",
-    "pino": "^5.13.5",
+    "pino": "^5.13.6",
     "youtube-search": "^1.1.4"
   },
   "devDependencies": {
-    "@babel/cli": "^7.6.4",
-    "@babel/core": "^7.6.4",
-    "@babel/node": "^7.6.3",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/preset-env": "^7.6.3",
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/node": "^7.7.0",
+    "@babel/plugin-proposal-class-properties": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
     "cross-env": "^6.0.3",
@@ -58,7 +58,7 @@
     "faker": "^4.1.0",
     "jest": "^24.9.0",
     "nodemon": "^1.19.4",
-    "prettier": "^1.18.2",
+    "prettier": "^1.19.1",
     "supertest": "^4.0.2"
   },
   "jest": {
