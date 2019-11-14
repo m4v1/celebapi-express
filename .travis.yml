@@ -33,4 +33,4 @@ script:
 
 after_success:
   - npm install codacy-coverage
-  - cat ./coverage/lcov.info | codacy-coverage
+  - cat ./coverage/lcov.info | codacy-coverage -v
