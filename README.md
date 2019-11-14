@@ -12,7 +12,9 @@ You need to have [Node](https://nodejs.org/en/download/) and [MySQL](https://dev
 
 At the moment you can only use MySQL as persistence.
 
-If you want to use to cache system, you need to have Redis installed.
+If you want to use to cache system, you need to have [Redis](https://redis.io/download) installed.
+
+In production you can use [Sentry.io](https://sentry.io/) to log exceptions. Configure related variables in your .env file.
 
 ## Installation
 
