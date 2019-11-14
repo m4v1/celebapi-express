@@ -6,19 +6,24 @@ class SentryLogger {
     Sentry.init({
       dsn: process.env.SENTRY_DSN
     });
+    this.sentry = Sentry;
+  }
+
+  getSentry() {
+    return this.sentry;
   }
 
   info = error => {
-    Sentry.captureException(error);
+    this.sentry.captureException(error);
   };
 
   warn = error => {
-    Sentry.captureException(error);
+    this.sentry.captureException(error);
   };
 
   error = error => {
-    Sentry.captureException(error);
+    this.sentry.captureException(error);
   };
 }
 
-export default SentryLogger;
+export default new SentryLogger();

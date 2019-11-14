@@ -34,21 +34,23 @@ describe('Check logger instance on different environments', () => {
 });
 
 describe('Check logger functions on different environments', () => {
-  it('testing logger methods with env production', done => {
+  it('testing logger and sentry methods with env production', done => {
     process.env.NODE_ENV = 'production';
     process.env.USE_SENTRY = true;
     process.env.SENTRY_DSN = '';
     const Logger = require('../src/services/logger').default;
     const LoggerInstance = Logger.getLogger();
-    LoggerInstance.info = jest.fn();
-    Logger.info('foo');
-    LoggerInstance.warn = jest.fn();
-    Logger.warn('foo');
-    LoggerInstance.error = jest.fn();
-    Logger.error('foo');
-    expect(LoggerInstance.info).toHaveBeenCalledTimes(1);
-    expect(LoggerInstance.warn).toHaveBeenCalledTimes(1);
-    expect(LoggerInstance.error).toHaveBeenCalledTimes(1);
+    const Sentry = LoggerInstance.getSentry();
+    Sentry.captureException = jest.fn();
+    Logger.info('info');
+    expect(Sentry.captureException).toHaveBeenCalledTimes(1);
+    expect(Sentry.captureException).toHaveBeenCalledWith('info');
+    Logger.warn('warn');
+    expect(Sentry.captureException).toHaveBeenCalledTimes(2);
+    expect(Sentry.captureException).toHaveBeenCalledWith('warn');
+    Logger.error('error');
+    expect(Sentry.captureException).toHaveBeenCalledTimes(3);
+    expect(Sentry.captureException).toHaveBeenCalledWith('error');
     done();
   });
   it('testing logger methods with env development', done => {
