@@ -18,7 +18,7 @@ In production environmnet you can use:
 
 [Sentry.io](https://sentry.io/) to log exceptions. Configure related variables in your .env file.
 
-[Datadog](https://www.datadoghq.com/) as an apm for your API. Set USE_DATADOG to true in your .env config file to enable tracing.
+[Datadog](https://www.datadoghq.com/) as an apm for your API. Set `USE_DATADOG` to true in your .env config file to enable tracing.
 
 ## Installation
 
