@@ -5,7 +5,7 @@ import {} from './config';
 import getInfo from './routes/info';
 import getVideos from './routes/videos';
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production' && process.env.USE_DATADOG) {
   tracer.init({
     analytics: true
   });
