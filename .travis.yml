@@ -33,4 +33,5 @@ script:
 
 after_success:
   - npm install codacy-coverage
-  - cat ./coverage/lcov.info | codacy-coverage -v
+  - echo $CODACY_PROJECT_TOKEN
+  - cat ./coverage/lcov.info | codacy-coverage -v -t $CODACY_PROJECT_TOKEN
