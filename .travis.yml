@@ -34,3 +34,21 @@ script:
 after_success:
   - npm install codacy-coverage
   - cat ./coverage/lcov.info | codacy-coverage -t $CODACY_PROJECT_TOKEN
+
+before_deploy:
+  - mkdir celebapi-express
+  - npm run build
+  - mv dist/ celebapi-express/dist
+  - mv db/ celebapi-express/db
+  - rm -rf celebapi-express/db/seeds
+  - mv -t celebapi-express/ package-lock.json package.json knexfile.js ecosystem.config.js
+  - mv .env.orig celebapi-express/.env
+  - zip -r celebapi-express celebapi-express -x "*/.*"
+
+deploy:
+  provider: releases
+  api_key: $GITHUB_OAUTH_TOKEN
+  file: 'celebapi-express.zip'
+  skip_cleanup: true
+  on:
+    tags: true
