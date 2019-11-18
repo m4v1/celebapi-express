@@ -43,7 +43,7 @@ before_deploy:
   - rm -rf celebapi-express/db/seeds
   - mv -t celebapi-express/ package-lock.json package.json knexfile.js ecosystem.config.js
   - mv .env.orig celebapi-express/.env
-  - zip -r celebapi-express celebapi-express -x "*/.*"
+  - zip -r celebapi-express.zip celebapi-express/
 
 deploy:
   provider: releases
