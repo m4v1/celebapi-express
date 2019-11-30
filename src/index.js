@@ -10,7 +10,7 @@ if (process.env.NODE_ENV === 'production' && process.env.USE_DATADOG) {
   tracer.use('express', {
     analytics: true
   });
-  tracer.use('mysql', {
+  tracer.use('mysql2', {
     analytics: true
   });
   tracer.use('ioredis', {
