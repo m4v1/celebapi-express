@@ -6,7 +6,14 @@ import getInfo from './routes/info';
 import getVideos from './routes/videos';
 
 if (process.env.NODE_ENV === 'production' && process.env.USE_DATADOG) {
-  tracer.init({
+  tracer.init();
+  tracer.use('express', {
+    analytics: true
+  });
+  tracer.use('mysql', {
+    analytics: true
+  });
+  tracer.use('ioredis', {
     analytics: true
   });
 }
