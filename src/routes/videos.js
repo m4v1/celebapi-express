@@ -9,15 +9,14 @@ const getVideos = async (req, res) => {
 
   if (!videos) {
     videos = await searchRemoteVideos(req.params.name);
+    if (!videos) {
+      const response = generateDTO([], 'error');
+      return res.status(response.status).send(response);
+    }
     status = Object.entries(videos.results).length >= 1 ? 'remote' : 'error';
     if (status === 'remote') {
       // cache data with expiration time 1h
-      cache.set(
-        `${req.params.name}-videos`,
-        JSON.stringify(videos),
-        'EX',
-        86400
-      );
+      cache.set(`${req.params.name}-videos`, JSON.stringify(videos), 'EX', 86400);
     }
   }
   const response = generateDTO(videos, status);
