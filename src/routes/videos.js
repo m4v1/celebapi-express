@@ -3,6 +3,11 @@ import generateDTO from '../models/api/videos/generateVideosDTO';
 import cache from '../services/cache';
 
 const getVideos = async (req, res) => {
+  if (process.env.DISABLE_VIDEO_API) {
+    const response = generateDTO([], 'error');
+    return res.status(response.status).send(response);
+  }
+
   let videos = await cache.get(`${req.params.name}-videos`);
   videos = JSON.parse(videos);
   let status = 'cache';

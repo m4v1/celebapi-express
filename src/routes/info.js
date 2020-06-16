@@ -4,6 +4,11 @@ import generateDTO from '../models/api/info/generateInfoDTO';
 import cache from '../services/cache';
 
 const getInfo = async (req, res) => {
+  if (process.env.DISABLE_INFO_API) {
+    const response = generateDTO([], 'error');
+    return res.status(response.status).send(response);
+  }
+
   let status;
 
   let profile = await cache.get(req.params.name);
