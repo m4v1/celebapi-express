@@ -34,7 +34,7 @@
     "helmet": "^3.22.0",
     "ioredis": "^4.16.1",
     "knex": "^0.20.13",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "mysql2": "^2.1.0",
     "node-fetch": "^2.6.0",
     "objection": "^2.1.0",
